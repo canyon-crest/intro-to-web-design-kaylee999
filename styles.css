@@ -1,12 +1,56 @@
+/* Anchor scroll offset for navbar */
+a[id] {
+    display: block;
+    height: 0;
+    scroll-margin-top: 110px;
+}
 body{
-    background-color: lavender;
+    background-color: rgb(233, 199, 222);
     font-family:sans-serif;
+    margin-top: 70px;
+    color: #42243c;
+}
+/* Navigation Bar Styles */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgb(209, 164, 179);
+    border-bottom: 4px solid white;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(209,164,179,0.15);
+}
+.nav-list {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+}
+.nav-list li {
+    margin: 0 20px;
+}
+.nav-list a {
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background 0.2s, color 0.2s;
+}
+.nav-list a:hover {
+    background: rgb(243, 205, 230);
+    color: white;
+}
+.nav-list a:visited {
+    color: white;
 }
 
 #container{
     background: lavenderblush;
-    padding: 30px;
-    width: 700px;
+    padding: 50px;
+    width: auto;
     margin: 0 auto;
     border-left: 5px solid white;
     border-right: 5px solid white;
@@ -19,8 +63,12 @@ p{
 img{
     width:300px;
     float: left;
-    border: solid 3px pink;
+    border: 6px solid #ffb6c1;
     border-radius: 30px;
+    padding: 10px;
+    background-clip: padding-box;
+    box-shadow: 0 0 0 2px white inset, 0 0 10px rgba(255,182,193,0.55);
+    background: linear-gradient(135deg, #fff0f7 0%, #ffe6f1 100%);
     margin-right: 20px;
     margin-bottom: 20px;
 }
@@ -28,12 +76,12 @@ img{
 h1{
     padding: 20px;
     text-align: center;
-    background: black;
+    background: rgb(209, 164, 179);
     width: auto;
     margin: auto;
     font-size: 3em;
-    border: 6px groove white;
-    border-radius: 30px;
+    border: 6px  white;
+    border-radius: 10px;
     color: white;
 }
 h2{
@@ -57,14 +105,14 @@ h3{
 }
 
 .highlight{
-    background: rgb(233, 205, 243);
+    background: rgb(243, 205, 230);
     color: black;
     padding: 4px;
     border-radius: 5px;
 }
 
 .highlightTitle{
- background: rgb(238, 183, 223);
+    background: rgb(209, 164, 179);
     font-weight: bold;
     color: black;
     padding: 4px;
@@ -73,11 +121,11 @@ h3{
 
 a:link{
     font-weight:bold;
-    color: darkmagenta;
+    color: palevioletred;
 }
 
 a:visited{
-    color: palevioletred;
+    color: magenta;
 }
 
 a:hover{
@@ -109,7 +157,7 @@ a:active{
 }
 #sidebar h3{
     font-size: 1.2 em;
-    padding:5px;
+    padding:2px;
     border-width: 5px;
     padding-left: 20px;
     border-right-color: palevioletred
@@ -125,6 +173,7 @@ a:active{
         margin: 0;
         padding: 0;
         border: none;
+        box-sizing: border-box;
     }
     body{
         padding: 10px;
@@ -133,6 +182,35 @@ a:active{
 @media (max-width: 768px){
     #sidebar{
         display: none;
+    }
+}
+
+/* No horizontal scrolling and stable small-screen layout */
+html, body {
+    overflow-x: hidden;
+}
+
+#container {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+img, #pic2 {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    img, #pic2 {
+        float: none;
+        display: block;
+        margin: 0 auto 20px;
+    }
+    p {
+        padding-right: 10px;
+        padding-left: 10px;
     }
 }
 
